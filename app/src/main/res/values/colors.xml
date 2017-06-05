@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="pink">#E04F5F</color>
+    <color name="opaque_red">#f00</color>
+    <color name="translucent_red">#9582FFC2</color>
 </resources>
