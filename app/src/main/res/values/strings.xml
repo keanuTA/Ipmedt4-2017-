@@ -5,4 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="keuze">Verder met begeleiding</string>
+    <string name="infoDwarseBreuk">Bij een dwarse botbreuk is het bot dwars dormidden gebroken. De breuklijn maakt een rechte hoek met de lengteas van het bot. De randen van de break kunnen wat gekorteld zijn, maar het bot is recht door midden gebroken. Dwarse breuken zijn over het algemeen het gevolg van een directe forse kracht op het bot. Circa 60% van alle botbreuken bij volwassenen is een dwarse botbreuk.</string>
+    <string name="titelDwarseBreuk">Dwarse Breuk</string>
 </resources>
