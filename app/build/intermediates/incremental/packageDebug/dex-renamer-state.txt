@@ -1,0 +1,7 @@
+#Mon Jun 05 19:54:19 CEST 2017
+base.0=C\:\\Users\\keanu\\Desktop\\HSL\\Ipmedt4 (2017)\\Project\\Ipmedt4-2017-\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_029866ecd1ce2d7e1ac517126179534d675ad5f2
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\keanu\\Desktop\\HSL\\Ipmedt4 (2017)\\Project\\Ipmedt4-2017-\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5cbc376acd04d0bc2c642b5ed8944436fc3b5a88\\classes.dex
+base.1=C\:\\Users\\keanu\\Desktop\\HSL\\Ipmedt4 (2017)\\Project\\Ipmedt4-2017-\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5cbc376acd04d0bc2c642b5ed8944436fc3b5a88
+file.0=C\:\\Users\\keanu\\Desktop\\HSL\\Ipmedt4 (2017)\\Project\\Ipmedt4-2017-\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_029866ecd1ce2d7e1ac517126179534d675ad5f2\\classes.dex

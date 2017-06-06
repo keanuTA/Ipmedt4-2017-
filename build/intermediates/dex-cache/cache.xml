@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_238e612b5f5ff25f1f602902e6d52f2e0a8e0203\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_387970a2ab258426fc6fc1f2f59af417c0855520\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\38b6c161f6e8fbc960c44831374d3ab66d3934dd\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fa4fce6affaf94f29eb599724d5ecf2835fdd282\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\b638aa525360dd489a963a1d3224fbb86c191c77\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_66bbe8938f0ab5a46c1cfefe784edf47a3302d58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\6a0e7edc92031b1220019774bed5ae404bb38de5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bb6f645ecf260e8d8cb8b281f62cb7a67aeffd86\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\3d948656fc7e8d4d9e3ab018881711e90b756e88\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_56f1320e14dbd3a200a8de9923fd199cb7822252\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ad951d6440079ee05651c7c78ba8355cac670e36">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5cbc376acd04d0bc2c642b5ed8944436fc3b5a88\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\c9df6f3735aebd770893abb79a1dd61e81a7f260\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f04105b94fc220d3e8782c62294bbf84f424b678\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\bb152d2b577f9e9eac1d1d261dfc3368ced10048\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_31c3786d6cafe082b49f7357756da9ae1d39cd7a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\351147063e27c5c92d121619aa71f1c3c6e9338b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3673e26c2bf7cc32a32ef04c5269ada87de89d20\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_029866ecd1ce2d7e1ac517126179534d675ad5f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\1fe17d8c28d674fd338fbfd2ad73c918eeb27693\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d0fbe1d3618d747b7f5aa7279c15b33525684ec3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\6329f412b4bd47c6d576a9e6a3c5bc1d85b3aa03\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d4bddbc20aa56f4c97fe4e064cff1b6df53167fa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\60076cf703af0bfbf01243ff85d483b3236965c9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9a0b512ab470dd4d907a8f8154662040618349e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\fd4636db24da11847b8c2073f93e46bc500855c7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_53041b661aa3bf77f52281752265097b0ef0915f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\f0a559c62e633c1612e9be9eafc05fdcc0f82fe7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5f59f0865e5b4ab1fc41708b05475ea0bbc2addb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\415913ab8e9d41e856471495040a340d01b76fe9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_839a77143b6408d4511ee2ed23bca5d882e71751\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\keanu\.android\build-cache\a0a290245be806323434af40f2b8dd4fce0f560c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\keanu\Desktop\HSL\Ipmedt4 (2017)\Project\Ipmedt4-2017-\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_853e9470d9aea4c2f451dc1bd75c1cbb7805ff48\classes.dex" />
+    </item>
+
+</items>

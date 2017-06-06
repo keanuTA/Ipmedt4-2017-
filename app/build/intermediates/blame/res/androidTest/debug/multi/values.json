@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "C:\\Users\\keanu\\Desktop\\HSL\\Ipmedt4 (2017)\\Project\\Ipmedt4-2017-\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\keanu\\.android\\build-cache\\c3bb912b8aa0d400cada33ee3d831276ca3328ec\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    }
+]
