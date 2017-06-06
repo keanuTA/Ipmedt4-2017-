@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.card_view_meervoudig:
+                Intent intent2 = new Intent(this, TrajectKeuze.class);
+                startActivity(intent2);
                 break;
         }
     }
