@@ -5,8 +5,20 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string-array name="traject">
+        <item>Gipsen></item>
+        <item>Vervolg afspraak></item>
+        <item>Loopgipss></item>
+        <item>Tweede vervolgafspraak></item>
+        <item>Rontgenfoto></item>
+        <item>Gis eraf></item>
+    </string-array>
 
-    <string name="keuze">Verder met begeleiding</string>
-    <string name="infoDwarseBreuk">Bij een dwarse botbreuk is het bot dwars dormidden gebroken. De breuklijn maakt een rechte hoek met de lengteas van het bot. De randen van de break kunnen wat gekorteld zijn, maar het bot is recht door midden gebroken. Dwarse breuken zijn over het algemeen het gevolg van een directe forse kracht op het bot. Circa 60% van alle botbreuken bij volwassenen is een dwarse botbreuk.</string>
-    <string name="titelDwarseBreuk">Dwarse Breuk</string>
+    <string name="volgendeButton">Verder met begeleiding</string>
+    <string name="vraag1">Weet u al wat voor botbreuk u heeft?</string>
+    <string name="keuze1">Enkelvoudige breuk</string>
+    <string name="keuze2">Meervoudige breuk</string>
+    <string name="keuze3">Onbekend</string>
+    <string name="instructies_pre_traject">In zelfde stijl als traject (komt nog) -> Naar ziekenhuis gaan, informatie röntengenfotos maken, wachten op uitslag. Aan de hand van uitslag vraag uit de Main Activity weer stellen en doorgaan naar het traject voor de betreffende botbreuk. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
 </resources>
