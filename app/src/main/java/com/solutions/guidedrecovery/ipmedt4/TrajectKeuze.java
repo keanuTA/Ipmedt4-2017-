@@ -15,8 +15,6 @@ import com.solutions.guidedrecovery.ipmedt4.models.TimeLineModel;
 
 public class TrajectKeuze extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +29,6 @@ public class TrajectKeuze extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
 
         recyclerview.setItemAnimator(new DefaultItemAnimator());
-
-
 
     }
 }

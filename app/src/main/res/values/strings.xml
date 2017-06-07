@@ -3,14 +3,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="herstel">Trajectvoortgang: 12%</string>
+    <string name="simpeleBreuk">Dwarse breuk | Mijn hersteltraject</string>
     <string name="action_settings">Settings</string>
-    <string-array name="traject">
-        <item>Gipsen></item>
-        <item>Vervolg afspraak></item>
-        <item>Loopgipss></item>
-        <item>Tweede vervolgafspraak></item>
-        <item>Rontgenfoto></item>
-        <item>Gis eraf></item>
-    </string-array>
+
 </resources>

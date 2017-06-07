@@ -64,7 +64,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.MyView
             this.description.setText(currentObject.getDescription());
             this.position = position;
             this.currentObject = currentObject;
-
         }
     }
 

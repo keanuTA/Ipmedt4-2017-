@@ -24,8 +24,6 @@ public class TimeLineModel {
 
     }
 
-
-
     public String getTitle(){
         return title;
     }
@@ -40,33 +38,26 @@ public class TimeLineModel {
         this.description = description;
     }
 
-
-
-
     public static List<TimeLineModel> getObjectList(){
 
         List<TimeLineModel> dataList = new ArrayList<>();
 
-        String[] acties = new String[5];
-        acties[0] = "Gipsen";
-        acties[1] = "Afspraak";
-        acties[2] = "Krukken";
-        acties[3] = "Loopgips";
-        acties[4] = "Herstel";
+        ArrayList<String> acties = new ArrayList<String>();
+        acties.add("Gipsen");
+        acties.add("Vervolgafspraak");
+        acties.add("Loopgips");
+        acties.add("Hersteld");
 
-        String[] omschrijvingen = new String[5];
-        omschrijvingen[0] = "Gips om het been";
-        omschrijvingen[1] = "Afspraak maken bij de receptie";
-        omschrijvingen[2] = "Krukken verkrijgen";
-        omschrijvingen[3] = "Oud gips eraf, nieuw loopgips om het been";
-        omschrijvingen[4] = "Herstelfase";
+        ArrayList<String> omschrijvingen = new ArrayList<String>();
+        omschrijvingen.add("Gips om het been");
+        omschrijvingen.add("Afspraak maken bij de receptie");
+        omschrijvingen.add("Na 4 weken loopgips");
+        omschrijvingen.add("Herstelfase");
 
-
-
-        for(int i = 1; i < acties.length; i++){
+        for(int i = 0; i < acties.size(); i++){
             TimeLineModel timeline = new TimeLineModel();
-            timeline.setTitle(i + ". " + acties[i]);
-            timeline.setDescription(omschrijvingen[i]);
+            timeline.setTitle((i+1) + ". " + acties.get(i));
+            timeline.setDescription(omschrijvingen.get(i));
             dataList.add(timeline);
         }
 
