@@ -1,70 +1,102 @@
-package com.solutions.guidedrecovery.ipmedt4.models;
+/**
+ *  Created by Dipak
+ *  10-06-2017
+ */
 
-import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
+package com.solutions.guidedrecovery.ipmedt4.models;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import com.github.vipulasri.timelineview.TimelineView;
 import com.solutions.guidedrecovery.ipmedt4.R;
-
 import java.util.List;
 
-/**
- * Created by Dipak on 5-6-2017.
- */
+public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder>
+{
 
-public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.MyViewHolder> {
+    private List<TimeLineModel> actionList;
 
-    private List<TimeLineModel> objectList;
-    private LayoutInflater inflater;
+    public TimeLineAdapter(List<TimeLineModel> actions)
+    {
+        this.actionList = actions;
 
-    public TimeLineAdapter(Context context, List<TimeLineModel> objectList){
-        inflater = LayoutInflater.from(context);
-        this.objectList = objectList;
+    }
+
+    // Create new views
+    @Override
+    public TimeLineAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
+        // create a new view
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_timeline, parent, false);
+
+        // create ViewHolder
+        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+
+        return viewHolder;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_timeline, parent, false);
-        MyViewHolder holder = new MyViewHolder(view);
-        return holder;
+    public void onBindViewHolder(ViewHolder viewHolder, int position)
+    {
+
+        final int pos = position;
+
+        viewHolder.tvName.setText(actionList.get(position).getTitle());
+        viewHolder.tvEmailId.setText(actionList.get(position).getDescription());
+        viewHolder.chkSelected.setChecked(actionList.get(position).isSelected());
+        viewHolder.chkSelected.setTag(actionList.get(position));
+
+        viewHolder.chkSelected.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                CheckBox cb = (CheckBox) v;
+                TimeLineModel contact = (TimeLineModel) cb.getTag();
+
+                contact.setSelected(cb.isChecked());
+                actionList.get(pos).setSelected(cb.isChecked());
+            }
+        });
+
     }
 
+    // Return the size arraylist
     @Override
-    public int getItemCount() {
-        return objectList.size();
+    public int getItemCount()
+    {
+        return actionList.size();
     }
 
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public static class ViewHolder extends RecyclerView.ViewHolder
+    {
 
-        TimeLineModel current = objectList.get(position);
-        holder.setData(current, position);
+        public TextView tvName;
+        public TextView tvEmailId;
+        public CheckBox chkSelected;
 
-    }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+        public ViewHolder(View itemLayoutView)
+        {
+            super(itemLayoutView);
 
-        private AppCompatTextView title, description;
-        private int position;
-        private TimeLineModel currentObject;
+            tvName = (TextView) itemLayoutView.findViewById(R.id.text_timeline_title);
+            tvEmailId = (TextView) itemLayoutView.findViewById(R.id.text_timeline_date);
+            chkSelected = (CheckBox) itemLayoutView.findViewById(R.id.checkBox2);
 
-        public MyViewHolder(View itemView){
-            super(itemView);
-            title = (AppCompatTextView) itemView.findViewById(R.id.text_timeline_title);
-            description = (AppCompatTextView) itemView.findViewById(R.id.text_timeline_date);
         }
 
-        public void setData(TimeLineModel currentObject, int position) {
+    }
 
-            this.title.setText(currentObject.getTitle());
-            this.description.setText(currentObject.getDescription());
-            this.position = position;
-            this.currentObject = currentObject;
-        }
+    // method to access in activity after updating selection
+    public List<TimeLineModel> getActionList()
+    {
+        return actionList;
     }
 
 }

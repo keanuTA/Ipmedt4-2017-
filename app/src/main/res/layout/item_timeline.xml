@@ -19,7 +19,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="10dp"
@@ -63,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_gravity="end"
+            android:buttonTint="@color/greenDark"
             android:text="Klaar" />
 
     </android.support.v7.widget.CardView>
