@@ -5,10 +5,12 @@
 
 package com.solutions.guidedrecovery.ipmedt4;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -17,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -31,69 +34,74 @@ import org.w3c.dom.Text;
 
 import static android.R.attr.checked;
 import static com.solutions.guidedrecovery.ipmedt4.R.id.checkBox2;
+import static com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter.PREFS_NAME;
 import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatus.INACTIVE;
 
 public class TrajectKeuze extends AppCompatActivity {
 
-    private Toolbar toolbar;
-
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
     private List<TimeLineModel> actionList = new ArrayList<>();
-
-    private Button btnSelection;
+    public Button btnSelection;
     private int counter;
     private TextView hs;
     private int percent;
     TimeLineModel singleAction;
     String data;
-    private boolean cb;
-    CheckBox checkBox1;
 
-    public static final String PREFS_NAME = "MyPreferencesFile";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traject_keuze);
+
+        hs = (TextView) findViewById(R.id.herstelStatus);
         btnSelection = (Button) findViewById(R.id.save);
 
+        //*** get all the data ***//
         getTimeLine();
+
+
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+        /* use this setting to improve performance if you know that changes
+         in content do not change the layout size of the RecyclerView */
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
+
+        //*** use a linear layout manager ***//
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // create an Object for Adapter
+
+        //*** create an Object for Adapter ***//
         mAdapter = new TimeLineAdapter(actionList);
 
-        // set the adapter object to the Recyclerview
+
+        //*** set the adapter object to the Recyclerview ***//
         mRecyclerView.setAdapter(mAdapter);
 
-        hs = (TextView) findViewById(R.id.herstelStatus);
-        checkBox1 = (CheckBox) findViewById(R.id.checkBox2);
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+
+        final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        final SharedPreferences.Editor editor = settings.edit();
         hs.setText(settings.getString("hs", "0%"));
-        settings.getBoolean("isChecked", false);
+
 
 
         btnSelection.setOnClickListener(new OnClickListener()
         {
+
             @Override
             public void onClick(View v)
             {
 
                 data = "";
+
 
                 for (int i = 0; i < actionList.size(); i++)
                 {
@@ -101,18 +109,18 @@ public class TrajectKeuze extends AppCompatActivity {
                     if (singleAction.isSelected())
                     {
                         data = data + "\n" + singleAction.getTitle().toString();
+                        editor.putBoolean("isChecked", singleAction.isSelected());
+
                     }
 
+                    calculatePercentage();
+
+
+                    Toast.makeText(TrajectKeuze.this, "U heeft de volgende fases afgerond: \n" + data, Toast.LENGTH_SHORT).show();
+                    editor.putString("hs", hs.getText().toString());
+                    editor.apply();
+
                 }
-                calculatePercentage();
-                Toast.makeText(TrajectKeuze.this, "U heeft de volgende fases afgerond: \n" + data, Toast.LENGTH_LONG).show();
-
-
-                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putBoolean("isChecked", true);
-                editor.putString("hs", hs.getText().toString());
-                editor.commit();
 
             }
 
@@ -126,7 +134,7 @@ public class TrajectKeuze extends AppCompatActivity {
 
     }
 
-
+    // ***----- calculate progress in percentage -----***//
     public void calculatePercentage()
     {
 
@@ -146,6 +154,9 @@ public class TrajectKeuze extends AppCompatActivity {
         }
     }
 
+
+
+    // ***----- timeline data -----*** //
     public void getTimeLine()
     {
         ArrayList<String> acties = new ArrayList<String>();
