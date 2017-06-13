@@ -5,37 +5,25 @@
 
 package com.solutions.guidedrecovery.ipmedt4;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter;
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineModel;
 
-import org.w3c.dom.Text;
-
-import static android.R.attr.checked;
-import static com.solutions.guidedrecovery.ipmedt4.R.id.checkBox2;
 import static com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter.PREFS_NAME;
-import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatus.INACTIVE;
+import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatusActivity.INACTIVE;
 
 public class TrajectKeuze extends AppCompatActivity {
 
@@ -69,8 +57,8 @@ public class TrajectKeuze extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        /* use this setting to improve performance if you know that changes
-         in content do not change the layout size of the RecyclerView */
+        /*** use this setting to improve performance if you know that changes
+         in content do not change the layout size of the RecyclerView ***/
         mRecyclerView.setHasFixedSize(true);
 
 
