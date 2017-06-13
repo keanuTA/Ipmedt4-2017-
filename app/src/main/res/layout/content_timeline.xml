@@ -9,21 +9,56 @@
     tools:showIn="@layout/activity_traject_keuze">
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:clipToPadding="false"
-            android:padding="10dp" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+                <TextView
+                    android:id="@+id/simpeleBreuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:padding="10px"
+                    android:text="@string/simpeleBreuk"
+                    android:textAlignment="center"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/herstelStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greenDark"
+                    android:padding="10px"
+                    android:text="@string/herstel"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15dp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:padding="10dp" >
+
+                </android.support.v7.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greenDark"
+                    android:text="Opslaan"
+                    android:layout_gravity="bottom"
+                    android:textColor="#fff" />
+
+        </LinearLayout>
 
 
 </RelativeLayout>
