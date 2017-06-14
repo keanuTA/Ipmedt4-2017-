@@ -25,7 +25,7 @@ import com.solutions.guidedrecovery.ipmedt4.models.TimeLineModel;
 import static com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter.PREFS_NAME;
 import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatusActivity.INACTIVE;
 
-public class TrajectKeuze extends AppCompatActivity {
+public class TrajectKeuzeActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -104,7 +104,7 @@ public class TrajectKeuze extends AppCompatActivity {
                     calculatePercentage();
 
 
-                    Toast.makeText(TrajectKeuze.this, "U heeft de volgende fases afgerond: \n" + data, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TrajectKeuzeActivity.this, "U heeft de volgende fases afgerond: \n" + data, Toast.LENGTH_SHORT).show();
                     editor.putString("hs", hs.getText().toString());
                     editor.apply();
 

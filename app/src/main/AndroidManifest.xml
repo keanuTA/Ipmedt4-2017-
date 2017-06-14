@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -18,13 +19,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TrajectKeuze" />
-        <activity android:name=".LoopGipsActivity" />
-        <activity android:name=".GipsActivity"></activity>
+         />
+
+        <activity
+            android:name=".TrajectKeuzeActivity" />
+
+        <activity
+            android:name=".LoopGipsActivity"
+            android:label="Loopgips"/>
+
+        <activity
+            android:name=".GipsActivity"
+            android:label="Gips"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
