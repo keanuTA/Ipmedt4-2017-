@@ -1,71 +1,139 @@
-package com.solutions.guidedrecovery.ipmedt4.models;
+/**
+ *  Created by Dipak
+ *  10-06-2017
+ */
 
+package com.solutions.guidedrecovery.ipmedt4.models;
+import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import com.github.vipulasri.timelineview.TimelineView;
 import com.solutions.guidedrecovery.ipmedt4.R;
+import com.solutions.guidedrecovery.ipmedt4.TrajectKeuze;
 
 import java.util.List;
 
-/**
- * Created by Dipak on 5-6-2017.
- */
+import static android.R.attr.data;
+import static com.solutions.guidedrecovery.ipmedt4.R.id.save;
 
-public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.MyViewHolder> {
 
-    private List<TimeLineModel> objectList;
-    private LayoutInflater inflater;
+public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder>
+{
+    CheckBox cb;
+    public static final String PREFS_NAME = "MyPreferencesFile";
+    private List<TimeLineModel> actionList;
+    Context context;
 
-    public TimeLineAdapter(Context context, List<TimeLineModel> objectList){
-        inflater = LayoutInflater.from(context);
-        this.objectList = objectList;
+
+
+
+    //**----- constructor -----**//
+    public TimeLineAdapter(List<TimeLineModel> actions)
+
+    {
+        this.actionList = actions;
     }
+
+
+    //***----- Create new views -----***//
+    @Override
+    public TimeLineAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
+
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_timeline, parent, false);
+        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+
+        return viewHolder;
+    }
+
+
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_timeline, parent, false);
-        MyViewHolder holder = new MyViewHolder(view);
-        return holder;
+    public void onBindViewHolder(ViewHolder viewHolder, int position)
+    {
+        final int pos = position;
+
+        viewHolder.tvTitle.setText(actionList.get(position).getTitle());
+        viewHolder.tvDescription.setText(actionList.get(position).getDescription());
+        viewHolder.chkSelected.setChecked(actionList.get(position).isSelected());
+        viewHolder.chkSelected.setTag(actionList.get(position));
+
+
+        viewHolder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("blabla", "blabla" + pos);
+            }
+        });
+
+
+        viewHolder.chkSelected.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                cb = (CheckBox) v;
+                TimeLineModel touchPoint = (TimeLineModel) cb.getTag();
+
+                touchPoint.setSelected(cb.isChecked());
+                actionList.get(pos).setSelected(cb.isChecked());
+
+            }
+
+        });
+
+
     }
 
+    //***----- Return the size arraylist -----***//
     @Override
-    public int getItemCount() {
-        return objectList.size();
+    public int getItemCount()
+    {
+        return actionList.size();
     }
 
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        TimeLineModel current = objectList.get(position);
-        holder.setData(current, position);
+    //***----- inner class ViewHolder -----***//
+    public static class ViewHolder extends RecyclerView.ViewHolder
+    {
 
-    }
+        public TextView tvTitle;
+        public TextView tvDescription;
+        public CheckBox chkSelected;
+        public CardView cv;
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+        public ViewHolder(View itemLayoutView)
+        {
+            super(itemLayoutView);
 
-        private AppCompatTextView title, description;
-        private int position;
-        private TimeLineModel currentObject;
+            tvTitle = (TextView) itemLayoutView.findViewById(R.id.text_timeline_title);
+            tvDescription = (TextView) itemLayoutView.findViewById(R.id.text_timeline_date);
+            chkSelected = (CheckBox) itemLayoutView.findViewById(R.id.checkBox2);
+            cv = (CardView) itemLayoutView.findViewById(R.id.cardAction);
 
-        public MyViewHolder(View itemView){
-            super(itemView);
-            title = (AppCompatTextView) itemView.findViewById(R.id.text_timeline_title);
-            description = (AppCompatTextView) itemView.findViewById(R.id.text_timeline_date);
         }
 
-        public void setData(TimeLineModel currentObject, int position) {
+    }
 
-            this.title.setText(currentObject.getTitle());
-            this.description.setText(currentObject.getDescription());
-            this.position = position;
-            this.currentObject = currentObject;
-
-        }
+    //***----- method to access in activity after updating selection -----***//
+    public List<TimeLineModel> getActionList()
+    {
+        return actionList;
     }
 
 }

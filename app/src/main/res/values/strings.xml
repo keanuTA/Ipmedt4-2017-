@@ -14,11 +14,10 @@
         <item>Gis eraf></item>
     </string-array>
 
-    <string name="volgendeButton">Verder met begeleiding</string>
-    <string name="vraag1">Weet u al wat voor botbreuk u heeft?</string>
-    <string name="keuze1">Enkelvoudige breuk</string>
-    <string name="keuze2">Meervoudige breuk</string>
-    <string name="keuze3">Onbekend</string>
+    <string name="verder">Verder met begeleiding</string>
+    <string name="enkelvoudigeBreuk">Ik heb een enkelvoudige breuk</string>
+    <string name="meervoudigeBreuk">Ik heb een meervoudige breuk</string>
+    <string name="onbekendeBreuk">Ik weet nog niet welke breuk ik heb</string>
     <string name="instructies_pre_traject">In zelfde stijl als traject (komt nog) -> Naar ziekenhuis gaan, informatie röntengenfotos maken, wachten op uitslag. Aan de hand van uitslag vraag uit de Main Activity weer stellen en doorgaan naar het traject voor de betreffende botbreuk. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 
 </resources>

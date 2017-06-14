@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-        public void toTraject (View v){
+    public void toTraject (View v){
         Intent intent = new Intent(MainActivity.this, TrajectKeuze.class);
         startActivity(intent);
     }
-    public void toPreTraject(View v){
-                Intent intent3 = new Intent(MainActivity.this, PreTrajectKeuze.class);
-                startActivity(intent3);
-        }
+    public void toVoorTraject(View v){
+        Intent intent3 = new Intent(MainActivity.this, VoorTraject.class);
+        startActivity(intent3);
     }
+}
