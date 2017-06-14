@@ -1,45 +1,29 @@
-/**
- *  Created by Dipak
- *  10-06-2017
- */
-
 package com.solutions.guidedrecovery.ipmedt4.models;
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import com.github.vipulasri.timelineview.TimelineView;
+import com.solutions.guidedrecovery.ipmedt4.GipsActivity;
+import com.solutions.guidedrecovery.ipmedt4.LoopGipsActivity;
+import com.solutions.guidedrecovery.ipmedt4.MainActivity;
 import com.solutions.guidedrecovery.ipmedt4.R;
-import com.solutions.guidedrecovery.ipmedt4.TrajectKeuze;
 
 import java.util.List;
-
-import static android.R.attr.data;
-import static com.solutions.guidedrecovery.ipmedt4.R.id.save;
 
 
 public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder>
 {
+    private Context context;
     CheckBox cb;
     public static final String PREFS_NAME = "MyPreferencesFile";
     private List<TimeLineModel> actionList;
-    Context context;
-
 
 
 
@@ -64,21 +48,36 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
 
 
+
+
+
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int position)
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position)
     {
         final int pos = position;
-
         viewHolder.tvTitle.setText(actionList.get(position).getTitle());
         viewHolder.tvDescription.setText(actionList.get(position).getDescription());
         viewHolder.chkSelected.setChecked(actionList.get(position).isSelected());
         viewHolder.chkSelected.setTag(actionList.get(position));
-
+        viewHolder.cv.setTag(actionList.get(position));
 
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("blabla", "blabla" + pos);
+
+                final Intent intent;
+                switch (pos){
+                    case 0:
+                        intent =  new Intent(viewHolder.context, GipsActivity.class);
+                        break;
+                    case 1:
+                        intent =  new Intent(viewHolder.context, LoopGipsActivity.class);
+                        break;
+                    default:
+                        intent =  new Intent(viewHolder.context, MainActivity.class);
+                        break;
+                }
+                viewHolder.context.startActivity(intent);
             }
         });
 
@@ -112,6 +111,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
 
+        public final Context context;
         public TextView tvTitle;
         public TextView tvDescription;
         public CheckBox chkSelected;
@@ -121,6 +121,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         {
             super(itemLayoutView);
 
+            context = itemView.getContext();
             tvTitle = (TextView) itemLayoutView.findViewById(R.id.text_timeline_title);
             tvDescription = (TextView) itemLayoutView.findViewById(R.id.text_timeline_date);
             chkSelected = (CheckBox) itemLayoutView.findViewById(R.id.checkBox2);

@@ -5,7 +5,6 @@
 
 
 package com.solutions.guidedrecovery.ipmedt4.models;
-import com.solutions.guidedrecovery.ipmedt4.TrajectKeuze;
 
 import java.io.Serializable;
 
@@ -15,7 +14,7 @@ public class TimeLineModel implements Serializable
     private String title;
     private String description;
     private boolean isSelected;
-    private TrajectStatus status;
+    private TrajectStatusActivity status;
 
     public TimeLineModel()
     {
@@ -27,7 +26,7 @@ public class TimeLineModel implements Serializable
 
     }
 
-    public TimeLineModel(String title, String description, boolean isSelected, TrajectStatus status)
+    public TimeLineModel(String title, String description, boolean isSelected, TrajectStatusActivity status)
     {
 
         this.title = title;
@@ -66,12 +65,12 @@ public class TimeLineModel implements Serializable
         this.isSelected = isSelected;
     }
 
-    public TrajectStatus getStatus()
+    public TrajectStatusActivity getStatus()
     {
         return status;
     }
 
-    public void setStatus(TrajectStatus status)
+    public void setStatus(TrajectStatusActivity status)
     {
         this.status = status;
     }
