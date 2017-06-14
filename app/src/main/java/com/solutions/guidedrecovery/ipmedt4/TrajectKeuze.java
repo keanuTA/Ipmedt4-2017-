@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter;
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineModel;
 
+import org.w3c.dom.Text;
+
 import static com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter.PREFS_NAME;
 import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatusActivity.INACTIVE;
 
@@ -33,10 +35,18 @@ public class TrajectKeuze extends AppCompatActivity {
     private List<TimeLineModel> actionList = new ArrayList<>();
     public Button btnSelection;
     private int counter;
-    private TextView hs;
+    TextView hs;
+
     private int percent;
     TimeLineModel singleAction;
     String data;
+    TimeLineAdapter myLocation;
+
+
+    public SharedPreferences settings;
+    public SharedPreferences.Editor editor;
+
+
 
 
 
@@ -45,15 +55,14 @@ public class TrajectKeuze extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traject_keuze);
-
         hs = (TextView) findViewById(R.id.herstelStatus);
         btnSelection = (Button) findViewById(R.id.save);
 
         //*** get all the data ***//
         getTimeLine();
 
-
-
+        settings = getSharedPreferences(PREFS_NAME, 0);
+        editor = settings.edit();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -73,10 +82,6 @@ public class TrajectKeuze extends AppCompatActivity {
         //*** set the adapter object to the Recyclerview ***//
         mRecyclerView.setAdapter(mAdapter);
 
-
-
-        final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        final SharedPreferences.Editor editor = settings.edit();
         hs.setText(settings.getString("hs", "0%"));
 
 
@@ -116,13 +121,24 @@ public class TrajectKeuze extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStop(){
-        super.onStop();
 
-    }
 
-    // ***----- calculate progress in percentage -----***//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //***----- calculate progress in percentage -----***//
     public void calculatePercentage()
     {
 
@@ -144,6 +160,17 @@ public class TrajectKeuze extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     // ***----- timeline data -----*** //
     public void getTimeLine()
     {
@@ -151,8 +178,14 @@ public class TrajectKeuze extends AppCompatActivity {
         acties.add("Gips om mijn been");
         acties.add("Loopgips");
         acties.add("Gip mag eraf");
+        acties.add("Gips om mijn been");
+        acties.add("Loopgips");
+        acties.add("Gip mag eraf");
 
         ArrayList<String> omschrijvingen = new ArrayList<String>();
+        omschrijvingen.add("Na de diagnose van een dwarse botbreuk");
+        omschrijvingen.add("1 week later");
+        omschrijvingen.add("4 weken later");
         omschrijvingen.add("Na de diagnose van een dwarse botbreuk");
         omschrijvingen.add("1 week later");
         omschrijvingen.add("4 weken later");
@@ -163,5 +196,6 @@ public class TrajectKeuze extends AppCompatActivity {
             actionList.add(timeline);
         }
     }
+
 
 }

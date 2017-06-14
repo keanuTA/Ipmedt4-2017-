@@ -48,45 +48,31 @@
             android:layout_marginBottom="30px"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="wrap_content" android:orientation="vertical">
-            <TextView
-                android:id="@+id/infoMeervoudig"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginBottom="10px"
-                android:layout_marginRight="200px"
-                android:background="@color/translucent_red"
-                android:padding="10px"
-                android:textSize="10sp"
-                android:text="Bij een dwarse botbreuk is het bot dwars doormidden gebroken. De breuklijn maakt een rechte hoek met de lengteas van het bot. De randen van de breuk kunnen wat gekarteld zijn, maar het bot is recht doormidden gebroken. Dwarse breuken zijn over het algemeen het gevolg van een directe, forse kracht op het bot. 60% van alle botbreuken bij volwassenen is een dwarse botbreuk. " />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginBottom="10px"
-                android:layout_marginRight="400px"
+                android:textAlignment="center"
                 android:background="@color/translucent_red"
                 android:padding="10px"
-                android:textSize="20sp"
-                android:text="Hersteld: 50%"/>
+                android:text="Hersteld: 50%"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_marginTop="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginBottom="10px"
-                android:layout_marginRight="400px"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryDark"
+                android:textAlignment="center"
+                android:padding="10px"
+                android:text="Meervoudige breuk"
                 android:textColor="#fff"
-                android:padding="10px"
-                android:textSize="20sp"
-                android:text="Meervoudige breuk"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
 
@@ -130,30 +116,16 @@
             android:textAlignment="center" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/infoDwarse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginRight="200px"
                 android:layout_marginTop="10px"
-                android:background="@color/translucent_red"
-                android:padding="10px"
-                android:text="Bij een dwarse botbreuk is het bot dwars doormidden gebroken. De breuklijn maakt een rechte hoek met de lengteas van het bot. De randen van de breuk kunnen wat gekarteld zijn, maar het bot is recht doormidden gebroken. Dwarse breuken zijn over het algemeen het gevolg van een directe, forse kracht op het bot. 60% van alle botbreuken bij volwassenen is een dwarse botbreuk. "
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginRight="400px"
-                android:layout_marginTop="10px"
+                android:textAlignment="center"
                 android:background="@color/translucent_red"
                 android:padding="10px"
                 android:text="Hersteld: 50%"
@@ -162,11 +134,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10px"
-                android:layout_marginLeft="10px"
-                android:layout_marginRight="400px"
+                android:textAlignment="center"
                 android:layout_marginTop="10px"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryDark"
                 android:padding="10px"
                 android:text="Dwarse Breuk"
                 android:textColor="#fff"
