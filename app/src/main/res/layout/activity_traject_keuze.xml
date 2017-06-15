@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/white"
-    tools:context="com.solutions.guidedrecovery.ipmedt4.TrajectKeuze">
+    tools:context="com.solutions.guidedrecovery.ipmedt4.TrajectKeuzeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

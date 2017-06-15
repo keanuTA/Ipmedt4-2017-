@@ -12,7 +12,7 @@
         android:id="@+id/time_marker"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:line="@color/colorPrimaryDark"
+        app:line="@color/white"
         app:lineSize="2dp"
         app:linePadding="5dp"
         app:markerSize="15dp" />
@@ -25,10 +25,10 @@
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:contentPadding="15dp">
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
 
 
 

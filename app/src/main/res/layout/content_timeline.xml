@@ -29,58 +29,6 @@
                     android:textAlignment="center"
                     android:textSize="15dp" />
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/geschatteTijd"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:background="#5979FF"
-                        android:gravity="center_vertical"
-                        android:padding="10px"
-                        android:text="Nog ongeveer 6 weken te gaan"
-                        android:textAlignment="center"
-                        android:textColor="#fff"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/herstelStatus"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:background="@color/greenDark"
-                        android:gravity="center_vertical"
-                        android:padding="10px"
-                        android:text="@string/herstel"
-                        android:textAlignment="center"
-                        android:textColor="#fff"
-                        android:textSize="15dp"
-                        android:visibility="visible" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:background="@color/greenDark"
-                        android:padding="25dp"
-                        android:progressTint="@color/colorPrimary"
-                        android:layout_height="30dp"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-            </LinearLayout>
-
         <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
@@ -93,6 +41,67 @@
                     android:padding="10dp">
 
         </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/herstelStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center_vertical"
+                    android:padding="10px"
+                    android:text="@string/herstel"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:visibility="visible" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark_tr"
+                    android:padding="25dp"
+                    android:progressTint="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".40"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/geschatteTijd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:gravity="center_vertical"
+                    android:padding="10px"
+                    android:text="Nog 6 weken te gaan"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

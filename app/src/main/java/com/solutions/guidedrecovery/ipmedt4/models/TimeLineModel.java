@@ -14,7 +14,7 @@ public class TimeLineModel implements Serializable
     private String title;
     private String description;
     private boolean isSelected;
-    private TrajectStatusActivity status;
+    private TrajectStatus status;
 
     public TimeLineModel()
     {
@@ -26,7 +26,7 @@ public class TimeLineModel implements Serializable
 
     }
 
-    public TimeLineModel(String title, String description, boolean isSelected, TrajectStatusActivity status)
+    public TimeLineModel(String title, String description, boolean isSelected, TrajectStatus status)
     {
 
         this.title = title;
@@ -65,12 +65,12 @@ public class TimeLineModel implements Serializable
         this.isSelected = isSelected;
     }
 
-    public TrajectStatusActivity getStatus()
+    public TrajectStatus getStatus()
     {
         return status;
     }
 
-    public void setStatus(TrajectStatusActivity status)
+    public void setStatus(TrajectStatus status)
     {
         this.status = status;
     }

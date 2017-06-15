@@ -1,45 +1,43 @@
 package com.solutions.guidedrecovery.ipmedt4.models;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.solutions.guidedrecovery.ipmedt4.GipsActivity;
 import com.solutions.guidedrecovery.ipmedt4.LoopGipsActivity;
 import com.solutions.guidedrecovery.ipmedt4.MainActivity;
 import com.solutions.guidedrecovery.ipmedt4.R;
-import com.solutions.guidedrecovery.ipmedt4.TrajectKeuze;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 
 public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder>
 {
-    private Context context;
+
     CheckBox cb;
     public static final String PREFS_NAME = "MyPreferencesFile";
     private List<TimeLineModel> actionList;
     TimeLineModel singleAction;
     String data;
-    public SharedPreferences settings;
-    public SharedPreferences.Editor editor;
     private int counter;
     private int percent;
     TextView mTextView;
     TextView mTextView2;
     ProgressBar mProgress;
+    int progressStatus = 0;
+    Handler handler = new Handler();
+    Context context;
+
 
     //**----- constructor -----**//
     public TimeLineAdapter(List<TimeLineModel> actions, TextView hs, TextView timeLeft, ProgressBar prg)
@@ -49,6 +47,10 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         mTextView = hs;
         mProgress = prg;
         mTextView2 = timeLeft;
+    }
+
+    public TimeLineAdapter(){
+
     }
 
 
@@ -74,6 +76,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         viewHolder.cv.setTag(actionList.get(position));
 
 
+
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,17 +97,16 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             }
         });
 
-        viewHolder.chkSelected.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+
+        viewHolder.chkSelected.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, final boolean isChecked) {
+
                 counter = 0;
-                cb = (CheckBox) v;
+                cb = (CheckBox) buttonView;
                 TimeLineModel touchPoint = (TimeLineModel) cb.getTag();
                 touchPoint.setSelected(cb.isChecked());
                 actionList.get(pos).setSelected(cb.isChecked());
-
-                data = "";
 
                 for (int i = 0; i < actionList.size(); i++)
                 {
@@ -116,8 +118,68 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                         {
                             counter++;
                             percent = (counter * 100) / actionList.size();
-                            mTextView.setText("Voortgang herstel: " + percent + "%");
-                            mProgress.setProgress(percent);
+
+                            new Thread(new Runnable()
+                            {
+                                @Override
+                                public void run()
+                                {
+
+                                    if(isChecked){
+
+                                        for(progressStatus = progressStatus +1; progressStatus < Math.round(percent); progressStatus++)
+                                        {
+                                            handler.post(new Runnable()
+                                            {
+
+                                                public void run()
+                                                {
+                                                    mProgress.setProgress(progressStatus);
+                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
+                                                }
+
+                                            });
+                                            try
+                                            {
+                                                Thread.sleep(100);
+                                            }
+                                            catch (InterruptedException e)
+                                            {
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        for(progressStatus = progressStatus -1; progressStatus > Math.round(percent); progressStatus--)
+                                        {
+                                            handler.post(new Runnable()
+                                            {
+
+                                                public void run()
+                                                {
+                                                    mProgress.setProgress(progressStatus);
+                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
+                                                }
+
+                                            });
+                                            try
+                                            {
+                                                Thread.sleep(100);
+                                            }
+                                            catch (InterruptedException e)
+                                            {
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+                                    }
+
+
+                                }
+                            }).start();
 
                             if(percent >= 0 && percent < 30)
                             {
@@ -143,22 +205,33 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                     }
 
                 }
-
-
-
             }
-
         });
 
-
     }
-
 
     //***----- Return the size arraylist -----***//
     @Override
     public int getItemCount()
     {
         return actionList.size();
+    }
+
+    //***----- Save info -----***//
+    public void saveInfo(){
+        SharedPreferences sharedpref = context.getSharedPreferences("info", 0);
+        SharedPreferences.Editor editor  = sharedpref.edit();
+
+        editor.putString("herstelStatus", mTextView.getText().toString());
+        editor.apply();
+    }
+
+
+    //***----- Display info -----***//
+    public void displayInfo(){
+        SharedPreferences sharedpref = context.getSharedPreferences("info", 0);
+        String herstelStatus = sharedpref.getString("herstelStatus", "");
+        mTextView.setText(herstelStatus);
     }
 
 
@@ -184,7 +257,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             cv = (CardView) itemLayoutView.findViewById(R.id.cardAction);
 
         }
-
 
     }
 

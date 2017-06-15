@@ -9,4 +9,5 @@
     <color name="opaque_red">#f00</color>
     <color name="translucent_red">#9582FFC2</color>
     <color name="white">#ffffff</color>
+    <color name="black">#080719</color>
 </resources>
