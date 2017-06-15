@@ -13,22 +13,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter;
 import com.solutions.guidedrecovery.ipmedt4.models.TimeLineModel;
 
-import org.w3c.dom.Text;
+import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatus.INACTIVE;
 
-import static com.solutions.guidedrecovery.ipmedt4.models.TimeLineAdapter.PREFS_NAME;
-import static com.solutions.guidedrecovery.ipmedt4.models.TrajectStatusActivity.INACTIVE;
-
-public class TrajectKeuze extends AppCompatActivity {
+public class TrajectKeuzeActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -36,6 +29,8 @@ public class TrajectKeuze extends AppCompatActivity {
     TextView hs;
     TextView timeLeft;
     ProgressBar prg;
+    SharedPreferences sharedpref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,8 +41,12 @@ public class TrajectKeuze extends AppCompatActivity {
         timeLeft = (TextView) findViewById(R.id.geschatteTijd);
         prg = (ProgressBar) findViewById(R.id.progressBar);
 
+//        String herstelStatus = sharedpref.getString("herstelStatus", "");
+//        hs.setText(herstelStatus);
+
         //*** get all the data ***//
         getTimeLine();
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -67,9 +66,19 @@ public class TrajectKeuze extends AppCompatActivity {
         //*** set the adapter object to the Recyclerview ***//
         mRecyclerView.setAdapter(mAdapter);
 
+
     }
 
-
+//    @Override
+//    public  void onPause(){
+//        super.onPause();
+//
+//            editor  = sharedpref.edit();
+//            editor.putString("herstelStatus", hs.getText().toString());
+//            editor.commit();
+//
+//
+//    }
 
 
     // ***----- timeline data -----*** //
