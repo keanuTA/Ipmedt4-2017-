@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,23 +37,18 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     public SharedPreferences.Editor editor;
     private int counter;
     private int percent;
-    Activity activity;
-    TextView hs;
+    TextView mTextView;
+    TextView mTextView2;
+    ProgressBar mProgress;
 
     //**----- constructor -----**//
-    public TimeLineAdapter(List<TimeLineModel> actions)
+    public TimeLineAdapter(List<TimeLineModel> actions, TextView hs, TextView timeLeft, ProgressBar prg)
 
     {
         this.actionList = actions;
-
-    }
-
-
-    public TimeLineAdapter(Context context, Activity activity)
-
-    {
-        this.context = context;
-        this.activity = activity;
+        mTextView = hs;
+        mProgress = prg;
+        mTextView2 = timeLeft;
     }
 
 
@@ -76,6 +72,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         viewHolder.chkSelected.setChecked(actionList.get(position).isSelected());
         viewHolder.chkSelected.setTag(actionList.get(position));
         viewHolder.cv.setTag(actionList.get(position));
+
 
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,10 +98,9 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         {
             public void onClick(View v)
             {
-
+                counter = 0;
                 cb = (CheckBox) v;
                 TimeLineModel touchPoint = (TimeLineModel) cb.getTag();
-                counter = 0;
                 touchPoint.setSelected(cb.isChecked());
                 actionList.get(pos).setSelected(cb.isChecked());
 
@@ -120,11 +116,35 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                         {
                             counter++;
                             percent = (counter * 100) / actionList.size();
-                        }
+                            mTextView.setText("Voortgang herstel: " + percent + "%");
+                            mProgress.setProgress(percent);
 
+                            if(percent >= 0 && percent < 30)
+                            {
+                                mTextView2.setText("Nog ongeveer 6 weken te gaan");
+                            }
+                            else if(percent >= 30 && percent < 60)
+                            {
+                                mTextView2.setText("Nog ongeveer 5 weken te gaan");
+                            }
+                            if(percent >= 60 && percent < 80)
+                            {
+                                mTextView2.setText("Nog ongeveer 4 weken te gaan");
+                            }
+                            else if(percent >= 80 && percent < 100)
+                            {
+                                mTextView2.setText("Nog ongeveer 2 weken te gaan");
+                            }
+                            else if(percent == 100)
+                            {
+                                mTextView2.setText("Uw bot is hersteld.");
+                            }
+                        }
                     }
 
                 }
+
+
 
             }
 
@@ -132,6 +152,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
 
     }
+
 
     //***----- Return the size arraylist -----***//
     @Override
@@ -150,7 +171,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         public TextView tvDescription;
         public CheckBox chkSelected;
         public CardView cv;
-        public TextView hs;
 
 
         public ViewHolder(View itemLayoutView)
@@ -167,7 +187,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
 
     }
-
 
     //***----- method to access in activity after updating selection -----***//
     public List<TimeLineModel> getActionList()
