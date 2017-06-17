@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * Created by keanuTA on 19-06-17.
+ * Created by Dipak on 17-6-2017.
  */
 
 public class FontManager{
@@ -31,5 +31,7 @@ public class FontManager{
             ((TextView) v).setTypeface(typeface);
         }
     }
+
+
 
 }

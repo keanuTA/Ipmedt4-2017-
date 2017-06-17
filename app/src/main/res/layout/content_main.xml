@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/icons_container"
     android:layout_height="match_parent"
     android:background="@drawable/main_header_selector"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -12,15 +13,9 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_meervoudig"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:visibility="visible"
         android:onClick="toTraject"
 
@@ -33,36 +28,70 @@
         app:layout_constraintVertical_bias="0.111">
 
         <ImageView
-            android:src="@mipmap/pootjes"
+            android:src="@mipmap/dokter"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitXY"/>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom"
-            android:textAlignment="center"
-            android:text="Verder met begeleiding"
-            android:layout_marginBottom="30px"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Meervoudige breuk"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content" android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="195dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Verder met begeleiding"
+                 />
 
-                android:layout_marginTop="10px"
-                android:background="@color/colorPrimaryDark_tr"
-                android:textAlignment="center"
-                android:padding="10px"
-                android:text="Meervoudige breuk"
-                android:textColor="#fff"
-                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="@string/fa_icon_long_arrow_right"
+                android:textAlignment="center" />
+
         </LinearLayout>
 
 
@@ -70,16 +99,9 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_dwars"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-
         android:onClick="toTraject"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,40 +109,74 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026">
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/pootje1" />
+            android:src="@mipmap/dokter2" />
 
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30px"
-            android:gravity="bottom"
-            android:text="Verder met begeleiding"
-            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="51dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:text="Dwarse breuk"
+                android:paddingLeft="30dp"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="51dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
                 android:textAlignment="center"
-                android:layout_marginTop="10px"
-                android:background="@color/colorPrimaryDark_tr"
-                android:padding="10px"
-                android:text="Dwarse Breuk"
-                android:textColor="#fff"
-                android:textSize="20sp" />
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="195dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Verder met begeleiding"
+                 />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_weight="1"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:text="@string/fa_icon_long_arrow_right"
+                android:textAlignment="center" />
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
