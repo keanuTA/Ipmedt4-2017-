@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_icon_arrow_circle_right">&#xf0a9;</string>
+    <string name="fa_icon_long_arrow_right">&#xf178;</string>
+    <string name="fa_icon_user_md">&#xf0f0;</string>
+    <string name="fa_icon_heart">&#xf21e;</string>
+    <string name="fa_icon_arrow_up_right">&#xf14c;</string>
+
+</resources>
