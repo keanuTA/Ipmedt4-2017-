@@ -127,7 +127,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
                                     if(isChecked){
 
-                                        for(progressStatus = progressStatus +1; progressStatus < Math.round(percent); progressStatus++)
+                                        for(progressStatus = progressStatus; progressStatus < Math.round(percent); progressStatus++)
                                         {
                                             handler.post(new Runnable()
                                             {
@@ -153,7 +153,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                                     }
                                     else
                                     {
-                                        for(progressStatus = progressStatus -1; progressStatus > Math.round(percent); progressStatus--)
+                                        for(progressStatus = progressStatus; progressStatus > Math.round(percent); progressStatus--)
                                         {
                                             handler.post(new Runnable()
                                             {
