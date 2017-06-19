@@ -20,7 +20,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
 
         android:onClick="toTraject"
         app:cardElevation="5dp"
@@ -32,7 +32,22 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="#a91436"
             android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="297dp"
+                app:srcCompat="@drawable/Doctor_patient"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.05"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -41,27 +56,48 @@
                 android:gravity="bottom"
                 android:text="Verder met begeleiding"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteY="89dp"
-                tools:layout_editor_absoluteX="22dp" />
+                tools:layout_editor_absoluteY="185dp"
+                tools:layout_editor_absoluteX="44dp" />
 
             <TextView
                 android:id="@+id/infoDwarse"
-                android:layout_width="0dp"
-                android:layout_height="198dp"
-                android:background="@color/translucent_red"
+                android:layout_width="285dp"
+                android:layout_height="129dp"
+                android:background="#ff818c"
                 android:padding="10px"
                 android:text="Bij een dwarse botbreuk is het bot dwars doormidden gebroken. De breuklijn maakt een rechte hoek met de lengteas van het bot. De randen van de breuk kunnen wat gekarteld zijn, maar het bot is recht doormidden gebroken. Dwarse breuken zijn over het algemeen het gevolg van een directe, forse kracht op het bot. 60% van alle botbreuken bij volwassenen is een dwarse botbreuk. "
                 android:textSize="10sp"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="0dp"
+                android:layout_marginLeft="28dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.895"
+                android:layout_marginStart="22dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.2" />
         </android.support.constraint.ConstraintLayout>
 
 
     </android.support.v7.widget.CardView>
+
+    <HorizontalScrollView
+        android:layout_width="6dp"
+        android:layout_height="495dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </HorizontalScrollView>
 
 </android.support.constraint.ConstraintLayout>
