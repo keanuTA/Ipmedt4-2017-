@@ -90,23 +90,22 @@ public class TrajectKeuzeActivity extends AppCompatActivity {
     {
         ArrayList<String> acties = new ArrayList<String>();
         acties.add("Gips om mijn been");
+        acties.add("Vervolgafspraak");
         acties.add("Loopgips");
-        acties.add("Gip mag eraf");
-        acties.add("Gips om mijn been");
-        acties.add("Loopgips");
-        acties.add("Gip mag eraf");
+        acties.add("Gips mag eraf");
+        acties.add("Fysio");
+
 
         ArrayList<String> omschrijvingen = new ArrayList<String>();
-        omschrijvingen.add("Na de diagnose van een dwarse botbreuk");
-        omschrijvingen.add("1 week later");
-        omschrijvingen.add("4 weken later");
-        omschrijvingen.add("Na de diagnose van een dwarse botbreuk");
-        omschrijvingen.add("1 week later");
-        omschrijvingen.add("4 weken later");
+        omschrijvingen.add("Fase 1");
+        omschrijvingen.add("Fase 2");
+        omschrijvingen.add("Fase 3");
+        omschrijvingen.add("Fase 4");
+        omschrijvingen.add("Fase 5");
 
         for(int i = 0; i < acties.size(); i++)
         {
-            TimeLineModel timeline = new TimeLineModel((i+1) + ". " + acties.get(i), omschrijvingen.get(i), false, INACTIVE);
+            TimeLineModel timeline = new TimeLineModel(acties.get(i), omschrijvingen.get(i), false, INACTIVE);
             actionList.add(timeline);
         }
     }
