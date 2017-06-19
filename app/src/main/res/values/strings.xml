@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="herstel">Voortgang herstel: 0%</string>
     <string name="simpeleBreuk">Dwarse breuk | Mijn hersteltraject</string>
+    <string name="gipsenInfo">Dwarse breuk | Gipsen</string>
     <string name="action_settings">Settings</string>
 
 </resources>

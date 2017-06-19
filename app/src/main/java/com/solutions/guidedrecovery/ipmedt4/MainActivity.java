@@ -17,17 +17,16 @@ public class MainActivity extends AppCompatActivity {
         FontManager.markAsIconContainer(findViewById(R.id.icons_container), iconFont);
     }
 
-
     public void toTraject(View v) {
         switch (v.getId()) {
             case R.id.card_view_dwars:
                 Intent intent = new Intent(this, TrajectKeuzeActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.card_view_meervoudig:
-                Intent intent2 = new Intent(this, TrajectKeuzeActivity.class);
-                startActivity(intent2);
-                break;
+            //case R.id.card_view_meervoudig:
+                //Intent intent2 = new Intent(this, TrajectKeuzeActivity.class);
+                //startActivity(intent2);
+                //break;
         }
     }
 }

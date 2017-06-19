@@ -53,7 +53,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
     }
 
-
     //***----- Create new views -----***//
     @Override
     public TimeLineAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
@@ -64,7 +63,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         return viewHolder;
     }
 
-
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position)
     {
@@ -74,8 +72,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         viewHolder.chkSelected.setChecked(actionList.get(position).isSelected());
         viewHolder.chkSelected.setTag(actionList.get(position));
         viewHolder.cv.setTag(actionList.get(position));
-
-
 
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +92,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                 viewHolder.context2.startActivity(intent);
             }
         });
-
 
         viewHolder.chkSelected.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -126,8 +121,10 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                                 {
 
                                     if(isChecked){
+                                        
+                                        viewHolder.cv.setBackgroundResource(R.color.greenDark);
 
-                                        for(progressStatus = progressStatus +1; progressStatus < Math.round(percent); progressStatus++)
+                                        for(progressStatus = progressStatus; progressStatus <= Math.round(percent); progressStatus++)
                                         {
                                             handler.post(new Runnable()
                                             {
@@ -149,21 +146,17 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                                             }
 
                                         }
-
                                     }
                                     else
                                     {
-                                        for(progressStatus = progressStatus -1; progressStatus > Math.round(percent); progressStatus--)
+                                        for(progressStatus = progressStatus; progressStatus >= Math.round(percent); progressStatus--)
                                         {
                                             handler.post(new Runnable()
                                             {
-
-                                                public void run()
-                                                {
+                                                public void run() {
                                                     mProgress.setProgress(progressStatus);
                                                     mTextView.setText("Voortgang herstel: " + percent + "%");
                                                 }
-
                                             });
                                             try
                                             {
@@ -176,7 +169,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
                                         }
                                     }
-
 
                                 }
                             }).start();
@@ -226,14 +218,12 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         editor.apply();
     }
 
-
     //***----- Display info -----***//
     public void displayInfo(){
         SharedPreferences sharedpref = context.getSharedPreferences("info", 0);
         String herstelStatus = sharedpref.getString("herstelStatus", "");
         mTextView.setText(herstelStatus);
     }
-
 
     //***----- inner class ViewHolder -----***//
     public static class ViewHolder extends RecyclerView.ViewHolder
@@ -244,7 +234,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         public TextView tvDescription;
         public CheckBox chkSelected;
         public CardView cv;
-
 
         public ViewHolder(View itemLayoutView)
         {
