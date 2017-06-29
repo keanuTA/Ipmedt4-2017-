@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +74,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         viewHolder.chkSelected.setTag(actionList.get(position));
         viewHolder.cv.setTag(actionList.get(position));
 
-        viewHolder.cv.setOnClickListener(new View.OnClickListener() {
+        viewHolder.cv.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -103,101 +104,72 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                 touchPoint.setSelected(cb.isChecked());
                 actionList.get(pos).setSelected(cb.isChecked());
 
-                for (int i = 0; i < actionList.size(); i++)
-                {
+                for (int i = 0; i < actionList.size(); i++) {
                     singleAction = actionList.get(i);
 
-                    if (singleAction.isSelected())
-                    {
-                        if (actionList.get(i).isSelected())
-                        {
-                            counter++;
-                            percent = (counter * 100) / actionList.size();
+                    if (singleAction.isSelected()) {
+                        counter++;
+                    }
 
-                            new Thread(new Runnable()
-                            {
-                                @Override
-                                public void run()
-                                {
+                    percent = (counter * 100) / actionList.size();
 
-                                    if(isChecked){
-                                        
-                                        viewHolder.cv.setBackgroundResource(R.color.greenDark);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
 
-                                        for(progressStatus = progressStatus; progressStatus <= Math.round(percent); progressStatus++)
-                                        {
-                                            handler.post(new Runnable()
-                                            {
+                            if (isChecked) {
 
-                                                public void run()
-                                                {
-                                                    mProgress.setProgress(progressStatus);
-                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
-                                                }
+                                for (progressStatus = progressStatus; progressStatus <= Math.round(percent); progressStatus++) {
+                                    handler.post(new Runnable() {
 
-                                            });
-                                            try
-                                            {
-                                                Thread.sleep(100);
-                                            }
-                                            catch (InterruptedException e)
-                                            {
-                                                e.printStackTrace();
-                                            }
-
+                                        public void run() {
+                                            mProgress.setProgress(progressStatus);
+                                            mTextView.setText("Voortgang herstel: " + percent + "%");
                                         }
-                                    }
-                                    else
-                                    {
-                                        for(progressStatus = progressStatus; progressStatus >= Math.round(percent); progressStatus--)
-                                        {
-                                            handler.post(new Runnable()
-                                            {
-                                                public void run() {
-                                                    mProgress.setProgress(progressStatus);
-                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
-                                                }
-                                            });
-                                            try
-                                            {
-                                                Thread.sleep(100);
-                                            }
-                                            catch (InterruptedException e)
-                                            {
-                                                e.printStackTrace();
-                                            }
 
-                                        }
+                                    });
+                                    try {
+                                        Thread.sleep(100);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
                                     }
 
                                 }
-                            }).start();
+                            } else {
+                                for (progressStatus = progressStatus; progressStatus >= Math.round(percent); progressStatus--) {
+                                    handler.post(new Runnable() {
+                                        public void run() {
+                                            mProgress.setProgress(progressStatus);
+                                            mTextView.setText("Voortgang herstel: " + percent + "%");
+                                        }
+                                    });
+                                    try {
+                                        Thread.sleep(100);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
 
-                            if(percent >= 0 && percent < 30)
-                            {
-                                mTextView2.setText("Nog ongeveer 6 weken te gaan");
+                                }
                             }
-                            else if(percent >= 30 && percent < 60)
-                            {
-                                mTextView2.setText("Nog ongeveer 5 weken te gaan");
-                            }
-                            if(percent >= 60 && percent < 80)
-                            {
-                                mTextView2.setText("Nog ongeveer 4 weken te gaan");
-                            }
-                            else if(percent >= 80 && percent < 100)
-                            {
-                                mTextView2.setText("Nog ongeveer 2 weken te gaan");
-                            }
-                            else if(percent == 100)
-                            {
-                                mTextView2.setText("Uw bot is hersteld.");
-                            }
+
                         }
-                    }
+                    }).start();
 
+                    if (percent >= 0 && percent < 30) {
+                        mTextView2.setText("Nog ongeveer 6 weken te gaan");
+                    } else if (percent >= 30 && percent < 60) {
+                        mTextView2.setText("Nog ongeveer 5 weken te gaan");
+                    }
+                    if (percent >= 60 && percent < 80) {
+                        mTextView2.setText("Nog ongeveer 4 weken te gaan");
+                    } else if (percent >= 80 && percent < 100) {
+                        mTextView2.setText("Nog ongeveer 2 weken te gaan");
+                    } else if (percent == 100) {
+                        mTextView2.setText("Uw bot is hersteld.");
+                    }
                 }
-            }
+                }
+
         });
 
     }
