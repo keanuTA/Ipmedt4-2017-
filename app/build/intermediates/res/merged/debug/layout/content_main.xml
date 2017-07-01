@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/icons_container"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_header_selector"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.solutions.guidedrecovery.ipmedt4.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_meervoudig"
+        android:layout_width="350dp"
+
+        android:layout_height="250dp"
+        android:visibility="visible"
+        android:onClick="toTraject"
+
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_dwars"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:src="@mipmap/dokter"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Meervoudige breuk"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="195dp"
+                android:layout_weight="0.2"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Verder met begeleiding" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/fa_icon_long_arrow_right"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_dwars"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:onClick="toTraject"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/dokter2" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="51dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:text="Dwarse breuk"
+                android:paddingLeft="30dp"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="51dp"
+                android:layout_weight="1"
+                android:background="@color/black_tr"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="195dp"
+                android:layout_weight="0.2"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Verder met begeleiding" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/fa_icon_long_arrow_right"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

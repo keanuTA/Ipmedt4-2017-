@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\dokter2.jpg",
+        "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\mipmap-hdpi\\dokter2.jpg"
+    },
+    {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\dokter.jpg",
+        "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\mipmap-hdpi\\dokter.jpg"
+    },
+    {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\dokter_patient.jpg",
+        "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\mipmap-hdpi\\dokter_patient.jpg"
+    }
+]

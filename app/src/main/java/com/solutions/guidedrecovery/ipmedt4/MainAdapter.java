@@ -19,6 +19,7 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.Viewholder> {
 
     public MainAdapter(ArrayList<String> mDataset) {
         this.mDataset = mDataset;
+
     }
 
     @Override

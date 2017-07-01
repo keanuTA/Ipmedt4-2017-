@@ -1,0 +1,7 @@
+#Tue Jun 20 13:48:23 CEST 2017
+base.0=C\:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_5e245ec2876077f7f78a7e74f9823c55e9e13014
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_b1a027c637f7f50072ecde07bcdd2ded0d6d256a\\classes.dex
+base.1=C\:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_b1a027c637f7f50072ecde07bcdd2ded0d6d256a
+file.0=C\:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_5e245ec2876077f7f78a7e74f9823c55e9e13014\\classes.dex

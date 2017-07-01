@@ -2,6 +2,8 @@ package com.solutions.guidedrecovery.ipmedt4.models;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -112,100 +114,112 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                 {
                     singleAction = actionList.get(i);
 
-                    if (singleAction.isSelected())
+                    if (singleAction.isSelected()) {
+                        counter++;
+                    }
+
+                    percent = (counter * 100) / actionList.size();
+
+                    new Thread(new Runnable()
                     {
-                        if (actionList.get(i).isSelected())
+                        @Override
+                        public void run()
                         {
-                            counter++;
-                            percent = (counter * 100) / actionList.size();
 
-                            new Thread(new Runnable()
-                            {
-                                @Override
-                                public void run()
+                            if(isChecked){
+
+                                for(progressStatus = progressStatus; progressStatus < Math.round(percent); progressStatus++)
                                 {
-
-                                    if(isChecked){
-
-                                        for(progressStatus = progressStatus; progressStatus < Math.round(percent); progressStatus++)
-                                        {
-                                            handler.post(new Runnable()
-                                            {
-
-                                                public void run()
-                                                {
-                                                    mProgress.setProgress(progressStatus);
-                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
-                                                }
-
-                                            });
-                                            try
-                                            {
-                                                Thread.sleep(100);
-                                            }
-                                            catch (InterruptedException e)
-                                            {
-                                                e.printStackTrace();
-                                            }
-
-                                        }
-
-                                    }
-                                    else
+                                    handler.post(new Runnable()
                                     {
-                                        for(progressStatus = progressStatus; progressStatus > Math.round(percent); progressStatus--)
+
+                                        public void run()
                                         {
-                                            handler.post(new Runnable()
-                                            {
-
-                                                public void run()
-                                                {
-                                                    mProgress.setProgress(progressStatus);
-                                                    mTextView.setText("Voortgang herstel: " + percent + "%");
-                                                }
-
-                                            });
-                                            try
-                                            {
-                                                Thread.sleep(100);
-                                            }
-                                            catch (InterruptedException e)
-                                            {
-                                                e.printStackTrace();
-                                            }
-
+                                            mProgress.setProgress(progressStatus);
+                                            mTextView.setText("Voortgang herstel: " + percent + "%");
+                                            viewHolder.cv.setBackgroundColor(Color.parseColor("#3AB277"));
+                                            viewHolder.tvTitle.setTextColor(Color.WHITE);
+                                            viewHolder.tvDescription.setTextColor(Color.WHITE);
+                                            viewHolder.chkSelected.setTextColor(Color.WHITE);
                                         }
-                                    }
 
+                                    });
+                                    try
+                                    {
+                                        Thread.sleep(100);
+                                    }
+                                    catch (InterruptedException e)
+                                    {
+                                        e.printStackTrace();
+                                    }
 
                                 }
-                            }).start();
 
-                            if(percent >= 0 && percent < 30)
-                            {
-                                mTextView2.setText("Nog ongeveer 6 weken te gaan");
                             }
-                            else if(percent >= 30 && percent < 60)
+                            else
                             {
-                                mTextView2.setText("Nog ongeveer 5 weken te gaan");
+                                for(progressStatus = progressStatus; progressStatus > Math.round(percent); progressStatus--)
+                                {
+                                    handler.post(new Runnable()
+                                    {
+
+                                        public void run()
+                                        {
+                                            mProgress.setProgress(progressStatus);
+                                            mTextView.setText("Voortgang herstel: " + percent + "%");
+                                            viewHolder.cv.setBackgroundColor(Color.parseColor("#ffffff"));
+                                            viewHolder.tvTitle.setTextColor(Color.BLACK);
+                                            viewHolder.tvDescription.setTextColor(Color.BLACK);
+                                            viewHolder.chkSelected.setTextColor(Color.BLACK);
+                                        }
+
+                                    });
+                                    try
+                                    {
+                                        Thread.sleep(100);
+                                    }
+                                    catch (InterruptedException e)
+                                    {
+                                        e.printStackTrace();
+                                    }
+
+                                }
                             }
-                            if(percent >= 60 && percent < 80)
-                            {
-                                mTextView2.setText("Nog ongeveer 4 weken te gaan");
-                            }
-                            else if(percent >= 80 && percent < 100)
-                            {
-                                mTextView2.setText("Nog ongeveer 2 weken te gaan");
-                            }
-                            else if(percent == 100)
-                            {
-                                mTextView2.setText("Uw bot is hersteld.");
-                            }
+
+
                         }
+                    }).start();
+
+                    if(percent >= 0 && percent < 30)
+                    {
+                        mTextView2.setText("Nog ongeveer 6 weken te gaan");
+
+                    }
+                    else if(percent >= 30 && percent < 60)
+                    {
+                        mTextView2.setText("Nog ongeveer 5 weken te gaan");
+
+                    }
+                    if(percent >= 60 && percent < 80)
+                    {
+                        mTextView2.setText("Nog ongeveer 4 weken te gaan");
+
+                    }
+                    else if(percent >= 80 && percent < 100)
+                    {
+                        mTextView2.setText("Nog ongeveer 2 weken te gaan");
+
+                    }
+                    else if(percent == 100)
+                    {
+                        mTextView2.setText("Uw bot is hersteld.");
+
                     }
 
                 }
             }
+
+
         });
 
     }
@@ -255,7 +269,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             tvDescription = (TextView) itemLayoutView.findViewById(R.id.text_timeline_date);
             chkSelected = (CheckBox) itemLayoutView.findViewById(R.id.checkBox2);
             cv = (CardView) itemLayoutView.findViewById(R.id.cardAction);
-
         }
 
     }
