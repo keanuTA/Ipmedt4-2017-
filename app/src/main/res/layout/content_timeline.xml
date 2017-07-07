@@ -6,7 +6,7 @@
     android:id="@+id/icons_container"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:background="@drawable/main_header_selector"
+    android:background="@drawable/bg"
     tools:showIn="@layout/activity_traject_keuze">
 
 
@@ -30,13 +30,17 @@
                     android:textAlignment="center"
                     android:textSize="15dp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/globaleIndo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-        </LinearLayout>
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary_tr"
+            android:visibility="gone"
+            android:textSize="10dp"
+            android:text="Hieronder ziet u alle fases tijdens het herstel. U kunt op een fase klikken voor alle informatie die erbij hoort. Mocht u een fase hebben afgerond, dan klikt u op klaar en kunt u uw voortgang onderaan monitoren." />
 
         <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerView"

@@ -8,9 +8,13 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="25" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <meta-data
         android:name="android.support.VERSION"
         android:value="25.3.1" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.solutions.guidedrecovery.ipmedt4.SplashActivity"
+            android:name="com.solutions.guidedrecovery.ipmedt4.activities.SplashActivity"
             android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,12 +35,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.solutions.guidedrecovery.ipmedt4.MainActivity"
+            android:name="com.solutions.guidedrecovery.ipmedt4.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.solutions.guidedrecovery.ipmedt4.TrajectKeuzeActivity" />
-        <activity android:name="com.solutions.guidedrecovery.ipmedt4.LoopGipsActivity" />
-        <activity android:name="com.solutions.guidedrecovery.ipmedt4.GipsActivity" />
+        <activity android:name="com.solutions.guidedrecovery.ipmedt4.activities.TrajectKeuzeActivity" />
+        <activity android:name="com.solutions.guidedrecovery.ipmedt4.activities.LoopGipsActivity" />
+        <activity android:name="com.solutions.guidedrecovery.ipmedt4.activities.GipsActivity" />
+        <activity android:name="com.solutions.guidedrecovery.ipmedt4.activities.VervolgAfspraakActivity" />
+        <activity
+            android:name="com.solutions.guidedrecovery.ipmedt4.activities.FysioActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+            android:theme="@style/Theme.IAPTheme" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

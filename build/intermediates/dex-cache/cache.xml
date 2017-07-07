@@ -2,22 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\IPMEDT4\IPMEDT4\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\IPMEDT4\IPMEDT4\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\IPMEDT4\IPMEDT4\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5e245ec2876077f7f78a7e74f9823c55e9e13014\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\IPMEDT4\IPMEDT4\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="e1690100685883ca25543115154f3cf92e2910ef">
-        <dex dex="C:\IPMEDT4\IPMEDT4\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b1a027c637f7f50072ecde07bcdd2ded0d6d256a\classes.dex" />
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\IPMEDT4\IPMEDT4\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi_057a45db6982568a3309c56a75984b79da83e422.jar" />
     </item>
 
 </items>

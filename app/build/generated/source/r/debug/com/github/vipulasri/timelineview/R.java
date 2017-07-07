@@ -8,26 +8,26 @@ package com.github.vipulasri.timelineview;
 
 public final class R {
     public static final class attr {
-        public static final int line = 0x7f010180;
-        public static final int lineOrientation = 0x7f010183;
-        public static final int linePadding = 0x7f010184;
-        public static final int lineSize = 0x7f010182;
-        public static final int marker = 0x7f01017f;
-        public static final int markerInCenter = 0x7f010185;
-        public static final int markerSize = 0x7f010181;
+        public static final int line = 0x7f010189;
+        public static final int lineOrientation = 0x7f01018c;
+        public static final int linePadding = 0x7f01018d;
+        public static final int lineSize = 0x7f01018b;
+        public static final int marker = 0x7f010188;
+        public static final int markerInCenter = 0x7f01018e;
+        public static final int markerSize = 0x7f01018a;
     }
     public static final class drawable {
-        public static final int marker = 0x7f02005f;
+        public static final int marker = 0x7f020076;
     }
     public static final class id {
         public static final int horizontal = 0x7f0d003f;
         public static final int vertical = 0x7f0d0040;
     }
     public static final class string {
-        public static final int app_name = 0x7f070022;
+        public static final int app_name = 0x7f07003d;
     }
     public static final class styleable {
-        public static final int[] timeline_style = { 0x7f01017f, 0x7f010180, 0x7f010181, 0x7f010182, 0x7f010183, 0x7f010184, 0x7f010185 };
+        public static final int[] timeline_style = { 0x7f010188, 0x7f010189, 0x7f01018a, 0x7f01018b, 0x7f01018c, 0x7f01018d, 0x7f01018e };
         public static final int timeline_style_line = 1;
         public static final int timeline_style_lineOrientation = 4;
         public static final int timeline_style_linePadding = 5;

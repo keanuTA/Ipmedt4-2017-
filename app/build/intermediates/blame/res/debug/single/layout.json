@@ -60,6 +60,10 @@
         "source": "C:\\Users\\Dip\\.android\\build-cache\\5a194a86224d43edbd5981e1c2f40d4e70035dad\\output\\res\\layout\\notification_template_media.xml"
     },
     {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_vervolg_afspraak.xml",
+        "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\activity_vervolg_afspraak.xml"
+    },
+    {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
         "source": "C:\\Users\\Dip\\.android\\build-cache\\5a194a86224d43edbd5981e1c2f40d4e70035dad\\output\\res\\layout\\notification_action_tombstone.xml"
     },
@@ -88,16 +92,16 @@
         "source": "C:\\Users\\Dip\\.android\\build-cache\\ae71166b06d91a7a83e2ab1f8cd3acc78f3db9ea\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
-        "source": "C:\\Users\\Dip\\.android\\build-cache\\ae71166b06d91a7a83e2ab1f8cd3acc78f3db9ea\\output\\res\\layout\\design_bottom_navigation_item.xml"
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\Dip\\.android\\build-cache\\5a194a86224d43edbd5981e1c2f40d4e70035dad\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_timeline.xml",
         "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\content_timeline.xml"
     },
     {
-        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\Dip\\.android\\build-cache\\5a194a86224d43edbd5981e1c2f40d4e70035dad\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\Dip\\.android\\build-cache\\ae71166b06d91a7a83e2ab1f8cd3acc78f3db9ea\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
@@ -172,6 +176,10 @@
         "source": "C:\\Users\\Dip\\.android\\build-cache\\5a194a86224d43edbd5981e1c2f40d4e70035dad\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fysio.xml",
+        "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\activity_fysio.xml"
+    },
+    {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_timeline.xml",
         "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\item_timeline.xml"
     },
@@ -212,12 +220,12 @@
         "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\activity_gips.xml"
     },
     {
-        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\Dip\\.android\\build-cache\\ae71166b06d91a7a83e2ab1f8cd3acc78f3db9ea\\output\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loop_gips.xml",
         "source": "C:\\IPMEDT4\\IPMEDT4\\app\\src\\main\\res\\layout\\activity_loop_gips.xml"
+    },
+    {
+        "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\Dip\\.android\\build-cache\\ae71166b06d91a7a83e2ab1f8cd3acc78f3db9ea\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\IPMEDT4\\IPMEDT4\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",

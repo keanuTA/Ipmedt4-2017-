@@ -27,13 +27,13 @@ public class TimeLineModel implements Serializable
     }
 
     public TimeLineModel(String title, String description, boolean isSelected, TrajectStatus status)
-{
+    {
 
-    this.title = title;
-    this.description = description;
-    this.isSelected = isSelected;
-    this.status = status;
-}
+        this.title = title;
+        this.description = description;
+        this.isSelected = isSelected;
+        this.status = status;
+    }
 
     public String getTitle()
     {
